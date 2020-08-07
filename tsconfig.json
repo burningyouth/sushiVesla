@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "noImplicitAny": true,
+        "removeComments": true,
+        "target": "es5",
+        "noEmit": true,
+    },
+    "include": [
+        "src/*"
+    ],
+    "exclude": [
+        "build/*",
+        "node_modules/*"
+    ],
+    "awesomeTypescriptLoaderOptions": {
+        "useBabel": true,
+        "babelOptions": {
+            "babelrc": false, 
+            "presets": [
+                ["@babel/preset-env", { "targets": "last 2 versions, ie 11", "modules": false }]
+            ]
+        },
+        "babelCore": "@babel/core", 
+    }
+}
