@@ -1,0 +1,38 @@
+@import "../../../../less/variables.less";
+
+.tiles__category.tiles__category_tempura {
+  display: flex;
+  align-items: center;
+  height: 50%;
+  .tiles__category-image {
+    top: 0;
+    left: -5%;
+
+    width: 37.5%;
+  }
+
+  .tiles__category-title {
+    font-size: 1.8vw;
+    margin-left: 18%;
+    color: @accent;
+  }
+
+  &:hover .tiles__category-image {
+    left: 10%;
+  }
+}
+
+@media (max-width: @xl) {
+  .tiles__category.tiles__category_tempura {
+    .tiles__category-image {
+      width: auto;
+      height: 100%;
+      left: 0;
+      margin-left: 50px;
+    }
+    .tiles__category-title {
+      font-size: 30px;
+      margin-left: 30px;
+    }
+  }
+}

@@ -1,0 +1,68 @@
+@import "../../../../less/variables.less";
+
+.tiles__category.tiles__category_wok {
+  .tiles__category-image {
+    position: absolute;
+    bottom: 0;
+    left: -7%;
+
+    width: 150%;
+  }
+
+  .tiles__category-title {
+    padding: 10% 10% 1% 10%;
+    font-size: 3.5vw;
+    line-height: 1;
+    color: @accent;
+  }
+  .tiles__category-sub-title {
+    color: @accent;
+  }
+
+  &:hover .tiles__category-image {
+    left: 0;
+  }
+}
+
+@media (max-width: @xl) and (min-width: @lg) {
+  .tiles__category.tiles__category_wok {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+    .tiles__category-image {
+      position: absolute;
+      width: 400px;
+    }
+    .tiles__category-title {
+      margin-right: 5%;
+      margin-left: 200px;
+      padding: 0;
+      text-align: right;
+      font-size: 5vw;
+    }
+    .tiles__category-sub-title {
+      font-size: 2vw;
+    }
+  }
+}
+
+@media (max-width: @lg) {
+  .tiles__category.tiles__category_wok {
+    .tiles__category-image {
+      position: absolute;
+      bottom: 0;
+      left: auto;
+      right: 0;
+      width: 350px;
+    }
+    .tiles__category-title {
+      width: 100%;
+      padding: 30px 30px 13px 30px;
+      font-size: 50px;
+    }
+    .tiles__category-sub-title {
+      font-size: 24px;
+    }
+  }
+}

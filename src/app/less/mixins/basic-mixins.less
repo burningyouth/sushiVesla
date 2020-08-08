@@ -6,6 +6,12 @@
     transition-timing-function: ease;
 }
 
+.transition-slow(@rest...){
+    transition-property: @rest;
+    transition-duration: 0.75s;
+    transition-timing-function: ease;
+}
+
 .width-generator(@bp: @breakpoints) {
     .w-25{
         width: 25%;

@@ -1,0 +1,45 @@
+@import "../../../../less/variables.less";
+
+.tiles__category_soups {
+  background-image: url(/assets/img/soups_shadows_tablet.png);
+  background-repeat: no-repeat;
+  background-position: 15% 26px;
+  background-size: 130%;
+  .tiles__category-image {
+    display: block;
+    top: -20%;
+
+    width: 80%;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .tiles__category-title {
+    font-size: 3.5vw;
+    padding-left: 13%;
+    margin-top: -10%;
+  }
+
+  &:hover .tiles__category-image {
+    transform: rotate(45deg);
+  }
+}
+
+@media (max-width: @xl) {
+  .tiles__category.tiles__category_soups {
+    background-position: 34px -35px;
+    background-size: 500px;
+    .tiles__category-image {
+      position: absolute;
+      width: 300px;
+      top: -60%;
+      left: 93px;
+    }
+    .tiles__category-title {
+      position: absolute;
+      bottom: 20px;
+      font-size: 50px;
+    }
+  }
+}

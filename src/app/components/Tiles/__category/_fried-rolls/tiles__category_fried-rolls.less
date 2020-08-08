@@ -1,0 +1,36 @@
+@import "../../../../less/variables.less";
+
+.tiles__category.tiles__category_fried-rolls {
+  display: flex;
+  align-items: center;
+  height: 25%;
+  .tiles__category-image {
+    top: 0;
+    left: -10%;
+
+    width: 50%;
+  }
+
+  .tiles__category-title {
+    font-size: 1.2vw;
+    margin-left: 5%;
+  }
+
+  &:hover .tiles__category-image {
+    left: 5%;
+  }
+}
+
+@media (max-width: @xl) {
+  .tiles__category.tiles__category_fried-rolls {
+    .tiles__category-image {
+      width: auto;
+      height: 100%;
+      left: 0;
+      margin-left: 50px;
+    }
+    .tiles__category-title {
+      font-size: 30px;
+    }
+  }
+}
