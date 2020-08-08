@@ -1,0 +1,20 @@
+@import "../../less/import.less";
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: -8px;
+  width: ~"calc(100% + 8px)";
+  z-index: 9999;
+
+  background: #ffffff;
+  .transition(height);
+
+  .counter-dropdown {
+    position: relative;
+  }
+
+  .with-counter-dropdown {
+    padding-bottom: 0;
+  }
+}

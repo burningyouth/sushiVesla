@@ -1,0 +1,30 @@
+@import "../../less/import.less";
+
+.button {
+  appearance: none !important;
+  position: relative;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-size: 15px;
+  font-family: inherit;
+  padding: 0 20px;
+  line-height: 38px;
+  text-align: center;
+  height: 38px;
+  border-radius: 19px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  text-decoration: none;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  background: white;
+
+  color: @gray;
+
+  &:hover {
+    color: @accent;
+  }
+}

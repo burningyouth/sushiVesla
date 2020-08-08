@@ -1,0 +1,27 @@
+@import "../../../less/import.less";
+
+.navbar__items {
+  display: flex;
+
+  width: 220px;
+  height: 50px;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+
+  text-align: right;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+@media (max-width: @md) {
+  .navbar__items {
+    display: none;
+    width: 100%;
+    margin-top: 15px;
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+}

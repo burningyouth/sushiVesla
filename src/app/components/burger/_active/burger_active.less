@@ -1,0 +1,13 @@
+@import "../../../less/import.less";
+
+.burger.burger_active .burger__main {
+  background: transparent;
+  &::before {
+    top: 0;
+    transform: rotate(45deg);
+  }
+  &::after {
+    bottom: 0;
+    transform: rotate(-45deg);
+  }
+}

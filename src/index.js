@@ -6,5 +6,7 @@ function importAll(r) {
   });
 }
 
-importAll(require.context("./assets/", true, /\.css|\.jsx?|\.less$/));
+importAll(require.context("./assets/fonts/", true, /\.css$/));
+importAll(require.context("./app/", true, /\.css|\.less$/));
+import "./app/less/index.less";
 import "./app/index";

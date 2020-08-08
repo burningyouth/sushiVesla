@@ -1,0 +1,27 @@
+@import "../../../less/import.less";
+
+.navbar__cart {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  margin-left: 20px;
+  color: @gray;
+  text-decoration: none;
+
+  a {
+    color: inherit;
+  }
+  .fa {
+    color: inherit;
+  }
+  &:hover {
+    color: @accent;
+  }
+}
+
+@media (max-width: @xl) {
+  .navbar__cart {
+    margin-left: 0;
+  }
+}
