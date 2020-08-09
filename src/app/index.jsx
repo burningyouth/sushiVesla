@@ -1,17 +1,19 @@
 import React from "react";
 import { render } from "react-dom";
-import { Route, BrowserRouter } from "react-router-dom";
+import { Switch, Route, HashRouter as Router } from "react-router-dom";
 import Navbar from "./components/Navbar/NavbarView";
 import Footer from "./components/Footer/FooterView";
-import Home from "./pageViews/HomeView";
-import Catalog from "./pageViews/CatalogView";
+import Home from "./pageViews/HomePageView";
+import Catalog from "./pageViews/CatalogPageView";
 
 render(
-  <BrowserRouter>
+  <Router>
     <Route component={Navbar} />
-    <Route exact path="/" component={Home} />
-    <Route exact path="/catalog" component={Catalog} />
+    <Switch>
+      <Route path="/" component={Home} exact></Route>
+      <Route path="/catalog" component={Catalog}></Route>
+    </Switch>
     <Route component={Footer} />
-  </BrowserRouter>,
+  </Router>,
   document.getElementById("root")
 );

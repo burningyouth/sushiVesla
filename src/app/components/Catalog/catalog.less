@@ -1,0 +1,27 @@
+@import "../../less/variables.less";
+
+.catalog {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: auto;
+  gap: 10px;
+}
+
+@media (min-width: @xxl) {
+  .catalog {
+    grid-template-columns: repeat(4, auto);
+  }
+}
+
+@media (max-width: @xl) {
+  .catalog {
+    grid-template-columns: repeat(2, auto);
+  }
+}
+
+@media (max-width: @md) {
+  .catalog {
+    display: block;
+  }
+}

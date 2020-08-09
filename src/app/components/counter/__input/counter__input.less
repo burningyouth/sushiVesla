@@ -1,0 +1,27 @@
+@import "../../../less/variables.less";
+
+.counter__input {
+  appearance: none !important;
+  border: none;
+  outline: none;
+  padding: 0;
+  background: none;
+
+  color: @dark;
+  line-height: 1;
+  font-size: 1.25rem;
+  font-family: inherit;
+
+  width: 25px;
+  height: auto;
+
+  text-align: center;
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
+}

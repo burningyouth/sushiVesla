@@ -114,7 +114,7 @@ module.exports = {
         from: `${PATHS.src}/${PATHS.assets}/fonts`,
         to: `${PATHS.assets}/fonts`,
       },
-      { from: `${PATHS.src}/${PATHS.assets}/static`, to: "static" },
+      { from: `${PATHS.src}/${PATHS.assets}/static`, to: "" },
     ]),
 
     ...PAGES_HTML.map(
