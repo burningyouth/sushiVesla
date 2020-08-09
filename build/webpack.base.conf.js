@@ -11,7 +11,7 @@ const PATHS = {
   assets: "assets",
 };
 
-const PAGES_DIR = `${PATHS.src}/pages`;
+const PAGES_DIR = `${PATHS.src}`;
 const PAGES_HTML = fs
   .readdirSync(PAGES_DIR)
   .filter((fileName) => fileName.endsWith(".html"));

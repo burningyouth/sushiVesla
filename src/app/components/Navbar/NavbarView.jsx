@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function NavbarView() {
   return (
@@ -31,10 +32,10 @@ function NavbarView() {
                 </button>
               </li>
               <li className="navbar__item ml-md-15 ml-10">
-                <a href="/" className="link navbar__link">
+                <Link to="#" className="link navbar__link">
                   Волжский
                   <i className="fa fa-angle-down ml-5" aria-hidden="true"></i>
-                </a>
+                </Link>
               </li>
               <li className="navbar__item ml-15 hide-md">
                 <a href="tel:88005503030" className="link navbar__link">
@@ -42,10 +43,10 @@ function NavbarView() {
                 </a>
               </li>
               <li className="navbar__item ml-0 ml-xxl-10 hide-md">
-                <a href="/" className="link navbar__link link_bold">
+                <Link to="#" className="link navbar__link link_bold">
                   Личный кабинет
                   <i className="fa fa-sign-in-alt ml-5" aria-hidden="true"></i>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -56,19 +57,19 @@ function NavbarView() {
                 id="navbar__items"
               >
                 <li className="navbar__item navbar__item_without-margin">
-                  <a className="link navbar__link" href="#">
+                  <Link to="#" className="link navbar__link">
                     О компании
-                  </a>
+                  </Link>
                 </li>
                 <li className="navbar__item ml-15">
-                  <a className="link navbar__link" href="#">
+                  <Link to="#" className="link navbar__link" href="#">
                     Условия доставки
-                  </a>
+                  </Link>
                 </li>
                 <li className="navbar__item ml-0 ml-xxl-10 ">
-                  <a className="link navbar__link" href="#">
+                  <Link to="#" className="link navbar__link" href="#">
                     Пользовательское соглашение
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -78,10 +79,10 @@ function NavbarView() {
                 <img src="assets/img/egg.svg" alt="" />
               </span>
             </button>
-            <a href="/" className="navbar__cart">
+            <Link to="#" className="navbar__cart">
               <div className="navbar__cart-info">3 поз. / 180р</div>
               <i className="fa fa-shopping-cart" aria-hidden="true"></i>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function() {
   return (
@@ -7,73 +8,73 @@ export default function() {
         <nav className="footer__content-wrapper container container_fluid">
           <ul className="footer__socials">
             <li className="navbar__item ml-0">
-              <a href="/" className="link">
+              <Link to="/catalog" className="link">
                 <i className="fab fa-facebook-square footer__icon"></i>
-              </a>
+              </Link>
             </li>
             <li className="navbar__item">
-              <a href="/" className="link">
+              <Link to="/catalog" className="link">
                 <i className="fab fa-vk footer__icon"></i>
-              </a>
+              </Link>
             </li>
             <li className="navbar__item">
-              <a href="/" className="link">
+              <Link to="/catalog" className="link">
                 <i className="fab fa-odnoklassniki-square footer__icon"></i>
-              </a>
+              </Link>
             </li>
             <li className="navbar__item">
-              <a href="/" className="footer__link link">
+              <Link to="/catalog" className="footer__link link">
                 <i className="fab fa-instagram footer__icon"></i>
-              </a>
+              </Link>
             </li>
             <div className="footer__location hide-md">
-              <a href="/" className="link footer__link">
+              <Link to="/catalog" className="link footer__link">
                 <i className="fas fa-map-marked-alt footer__icon"></i>
                 Ближайшие СушиВесла
-              </a>
+              </Link>
             </div>
           </ul>
           <ul className="footer__about">
             <li className="navbar__item footer__location show-md">
-              <a href="/" className="link footer__link">
+              <Link to="/catalog" className="link footer__link">
                 <i className="fas fa-map-marked-alt footer__icon"></i>
                 Ближайшие СушиВесла
-              </a>
+              </Link>
             </li>
             <li className="navbar__item">
-              <a className="link footer__link" href="/">
+              <Link className="link footer__link" to="/catalog">
                 Условия доставки
-              </a>
+              </Link>
             </li>
             <li className="navbar__item">
-              <a className="link footer__link" href="/">
+              <Link className="link footer__link" to="/catalog">
                 Акции
-              </a>
+              </Link>
             </li>
             <li className="navbar__item">
-              <a className="link footer__link" href="/">
+              <Link className="link footer__link" to="/catalog">
                 Новости
-              </a>
+              </Link>
             </li>
             <li className="navbar__item">
-              <a className="link footer__link" href="/">
+              <Link className="link footer__link" to="/catalog">
                 Франшиза
-              </a>
+              </Link>
             </li>
             <li className="navbar__item">
-              <a className="link footer__link" href="/">
+              <Link className="link footer__link" to="/catalog">
                 Вакансии
-              </a>
+              </Link>
             </li>
             <li className="navbar__item">
-              <a className="link footer__link" href="/">
+              <Link className="link footer__link" to="/catalog">
                 Отзывы
-              </a>
+              </Link>
             </li>
             <li className="navbar__item">
-              <a className="link footer__link" href="/">
+              <Link className="link footer__link" to="/catalog">
                 Пользовательское соглашение
-              </a>
+              </Link>
             </li>
           </ul>
           <ul className="footer__misc">
@@ -84,14 +85,14 @@ export default function() {
               <img src="assets/img/visa.svg" alt="Visa" />
             </li>
             <li className="navbar__item">
-              <a href="/">
+              <Link to="/catalog">
                 <img src="assets/img/google-play.png" alt="Gogle Play" />
-              </a>
+              </Link>
             </li>
             <li className="navbar__item">
-              <a href="/">
+              <Link to="/catalog">
                 <img src="assets/img/app-store.png" alt="AppStore" />
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
