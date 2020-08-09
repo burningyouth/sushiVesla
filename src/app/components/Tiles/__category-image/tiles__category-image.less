@@ -1,12 +1,13 @@
-@import "../../../less/import.less";
-
 .tiles__category-image {
+  display: none;
   position: relative;
 
   transform-origin: center;
 
-  width: 90%;
+  width: 100%;
   height: auto;
 
-  .transition-slow(top, left, transform);
+  transition-property: top, left, right, bottom, transform;
+  transition-duration: 0.75s;
+  transition-timing-function: ease;
 }

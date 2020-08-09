@@ -1,0 +1,20 @@
+@import "../../../less/variables.less";
+
+.footer__content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 61.5px;
+}
+
+@media (max-width: @xl) {
+  .footer__content-wrapper {
+    justify-content: center;
+    flex-direction: column;
+    height: auto;
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}

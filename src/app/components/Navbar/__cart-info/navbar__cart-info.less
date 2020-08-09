@@ -1,5 +1,20 @@
+@import "../../../less/variables.less";
+
 .navbar__cart-info {
   text-align: right;
   margin-right: 10px;
   width: 90px;
+}
+
+@media (max-width: @lg) {
+  .navbar__cart-info {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: @md) {
+  .navbar__cart-info {
+    width: auto;
+    font-size: 1rem;
+  }
 }

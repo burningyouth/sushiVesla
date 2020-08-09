@@ -1,3 +1,5 @@
+@import "../../../less/import.less";
+
 .tiles__category {
   position: relative;
   display: block;
@@ -5,4 +7,13 @@
 
   text-decoration: none;
   cursor: pointer;
+}
+
+@media (max-width: @md) {
+  .tiles__category {
+    display: flex !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    background: none !important;
+  }
 }

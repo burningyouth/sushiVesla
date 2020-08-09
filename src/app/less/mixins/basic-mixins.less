@@ -207,15 +207,15 @@
 
 .show-generator(@bp: @breakpoints){
     .show{
-        display: block;
+        display: block !important;
     }
     each(@bp, {
         .show-@{key}{
-            display: none ;
+            display: none !important;
         }
         @media (max-width: @value){
             .show-@{key}{
-                display: block;
+                display: block !important;
             }
         }
     })

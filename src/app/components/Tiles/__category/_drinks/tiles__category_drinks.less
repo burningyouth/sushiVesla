@@ -5,28 +5,28 @@
   align-items: center;
   justify-content: flex-end;
   height: 50%;
-  margin-top: 10px;
-  .tiles__category-image {
+  .tiles__category-images {
     bottom: -10%;
 
     width: 37.5%;
+    max-width: 200px;
   }
 
   .tiles__category-title {
-    font-size: 1.8vw;
-    margin-right: 10%;
+    font-size: 2rem;
+    margin-right: 20px;
     text-align: right;
     color: @accent;
   }
 
-  &:hover .tiles__category-image {
+  &:hover .tiles__category-images {
     bottom: 10%;
   }
 }
 
 @media (max-width: @xl) {
   .tiles__category.tiles__category_drinks {
-    .tiles__category-image {
+    .tiles__category-images {
       width: auto;
       height: 100%;
       left: 0;
@@ -37,5 +37,11 @@
       font-size: 30px;
       margin-right: 20px;
     }
+  }
+}
+
+@media (max-width: @md) {
+  .tiles__category.tiles__category_drinks {
+    flex-direction: row-reverse;
   }
 }

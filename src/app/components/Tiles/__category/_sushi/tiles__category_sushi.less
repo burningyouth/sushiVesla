@@ -5,11 +5,12 @@
   justify-content: flex-end;
   align-items: center;
   height: 25%;
-  .tiles__category-image {
+  .tiles__category-images {
     top: 0;
     right: -20%;
 
     width: 50%;
+    max-width: 200px;
   }
 
   .tiles__category-title {
@@ -17,14 +18,14 @@
     margin-right: 5%;
   }
 
-  &:hover .tiles__category-image {
+  &:hover .tiles__category-images {
     right: -5%;
   }
 }
 
 @media (max-width: @xl) {
   .tiles__category.tiles__category_sushi {
-    .tiles__category-image {
+    .tiles__category-images {
       width: auto;
       height: 100%;
       left: 0;
@@ -34,5 +35,11 @@
       font-size: 30px;
       margin-right: 10px;
     }
+  }
+}
+
+@media (max-width: @md) {
+  .tiles__category.tiles__category_sushi {
+    flex-direction: row-reverse;
   }
 }

@@ -1,0 +1,33 @@
+@import "../../../less/variables.less";
+
+.footer__about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 23px;
+  list-style: none;
+}
+
+@media (max-width: @xl) {
+  .footer__about {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: @md) {
+  .footer__about {
+    flex-direction: column;
+
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    text-align: center;
+
+    .navbar__item {
+      margin-bottom: 10px;
+    }
+  }
+}

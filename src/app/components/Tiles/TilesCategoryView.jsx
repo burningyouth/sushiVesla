@@ -2,39 +2,40 @@ import React from "react";
 
 export default function(props) {
   const className = `tiles__category tiles__category_${props.category}`,
-    { title, link, imageSrcDesktop, imageSrcTablet, reversed } = props;
+    {
+      title,
+      link,
+      imageSrcDesktop,
+      imageSrcTablet,
+      imageSrcPhone,
+      reversed,
+    } = props;
   let { subTitle } = props,
-    imageTablet,
-    imageDesktop;
-  if (subTitle) {
-    subTitle = <span className="tiles__category-sub-title">{subTitle}</span>;
-  }
-  if (imageSrcTablet && imageSrcDesktop) {
     imageTablet = (
       <img
-        className="tiles__category-image show-lg"
+        className="tiles__category-image tiles__category-image_tablet"
         src={imageSrcTablet}
         alt=""
       />
-    );
+    ),
     imageDesktop = (
       <img
-        className="tiles__category-image hide-lg"
+        className="tiles__category-image tiles__category-image_desktop"
         src={imageSrcDesktop}
         alt=""
       />
+    ),
+    imagePhone = (
+      <img
+        className="tiles__category-image tiles__category-image_phone"
+        src={imageSrcPhone}
+        alt=""
+      />
     );
+  if (subTitle) {
+    subTitle = <span className="tiles__category-sub-title">{subTitle}</span>;
   }
-  if (imageSrcDesktop && !imageSrcTablet) {
-    imageDesktop = (
-      <img className="tiles__category-image" src={imageSrcDesktop} alt="" />
-    );
-  }
-  if (imageSrcTablet && !imageSrcDesktop) {
-    imageTablet = (
-      <img className="tiles__category-image" src={imageSrcTablet} alt="" />
-    );
-  }
+
   if (reversed) {
     return (
       <a href={link} className={className}>
@@ -42,15 +43,21 @@ export default function(props) {
           {title}
           {subTitle}
         </span>
-        {imageDesktop}
-        {imageTablet}
+        <div className="tiles__category-images">
+          {imageDesktop}
+          {imageTablet}
+          {imagePhone}
+        </div>
       </a>
     );
   }
   return (
     <a href={link} className={className}>
-      {imageDesktop}
-      {imageTablet}
+      <div className="tiles__category-images">
+        {imageDesktop}
+        {imageTablet}
+        {imagePhone}
+      </div>
       <span className="tiles__category-title">
         {title}
         {subTitle}

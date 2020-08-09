@@ -4,33 +4,31 @@
   display: flex;
   align-items: center;
   height: 25%;
-  .tiles__category-image {
+  .tiles__category-images {
     top: 0;
     left: -10%;
 
     width: 50%;
+    max-width: 200px;
   }
 
   .tiles__category-title {
-    font-size: 1.2vw;
+    font-size: 1.5rem;
     margin-left: 5%;
   }
 
-  &:hover .tiles__category-image {
+  &:hover .tiles__category-images {
     left: 5%;
   }
 }
 
 @media (max-width: @xl) {
   .tiles__category.tiles__category_fried-rolls {
-    .tiles__category-image {
+    .tiles__category-images {
       width: auto;
       height: 100%;
       left: 0;
       margin-left: 50px;
-    }
-    .tiles__category-title {
-      font-size: 30px;
     }
   }
 }

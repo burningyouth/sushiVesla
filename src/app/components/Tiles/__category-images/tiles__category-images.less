@@ -1,0 +1,22 @@
+@import "../../../less/variables.less";
+
+.tiles__category-images {
+  position: relative;
+
+  transform-origin: center;
+
+  transition-property: top, left, right, bottom, transform;
+  transition-duration: 0.75s;
+  transition-timing-function: ease;
+}
+
+@media (max-width: @md) {
+  .tiles__category-images {
+    position: static !important;
+
+    width: 50% !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+  }
+}

@@ -1,18 +1,23 @@
 @import "../../../../less/import.less";
 
 .tiles__category.tiles__category_sets {
-  .tiles__category-image {
+  .tiles__category-images {
+    position: absolute;
     top: -5%;
     left: 0;
+
+    max-width: 350px;
   }
 
-  &:hover .tiles__category-image {
+  &:hover .tiles__category-images {
     top: 0;
   }
 
   .tiles__category-title {
-    font-size: 3.5vw;
-    margin-left: 17%;
+    position: absolute;
+    font-size: 4rem;
+    left: 17%;
+    bottom: 30px;
   }
 }
 
@@ -21,14 +26,21 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    .tiles__category-image {
-      margin-top: 30px;
-      width: 200px;
+    .tiles__category-images {
+      position: absolute;
+      top: 10%;
+      left: 10%;
+      z-index: 0;
+
+      width: auto;
     }
     .tiles__category-title {
-      font-size: 10vw;
-      margin-right: 5%;
-      margin-left: 0;
+      position: absolute;
+      bottom: 5%;
+      right: 5%;
+      z-index: 1;
+
+      font-size: 5rem;
       text-align: right;
     }
   }
@@ -36,19 +48,18 @@
 
 @media (max-width: @lg) {
   .tiles__category.tiles__category_sets {
-    .tiles__category-image {
-      position: absolute;
+    .tiles__category-images {
       top: -5%;
       left: 0;
       width: auto;
     }
     .tiles__category-title {
-      position: absolute;
       bottom: 50px;
+      left: auto;
 
       width: 100%;
 
-      font-size: 64px;
+      font-size: 3.5rem;
       margin-left: 30px;
     }
   }
