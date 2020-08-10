@@ -1,0 +1,30 @@
+{
+  "RU": {
+    "ACCOUNT": "Личный кабинет",
+    "CAVIAR": "Икринки",
+    "CAVIAR_TOOLTIP": "Это кэшбек от СушиВесла, которым можно оплачивать заказы",
+    "SETS": "Сеты",
+    "ROLLS": "Роллы",
+    "SUSHI": "Суши",
+    "FRIED_ROLLS": "Жаренные роллы",
+    "BAKED_ROLLS": "Запеченые роллы",
+    "WOK": "Воки",
+    "SOUPS": "Супы",
+    "TEMPURA": "Темпура",
+    "BEVERAGES": "Напитки"
+  },
+  "EN": {
+    "ACCOUNT": "Account",
+    "CAVIAR": "Caviar",
+    "CAVIAR_TOOLTIP": "This is a cashback from SushiVesla, which you can use to pay for orders",
+    "SETS": "Sets",
+    "ROLLS": "Rolls",
+    "SUSHI": "Sushi",
+    "FRIED_ROLLS": "Fried rolls",
+    "BAKED_ROLLS": "Baked rolls",
+    "WOK": "Woks",
+    "SOUPS": "Soups",
+    "TEMPURA": "Tempura",
+    "BEVERAGES": "Beverages"
+  }
+}

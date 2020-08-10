@@ -3,6 +3,7 @@ import NavbarItem from "./__item/NavbarItemView";
 import NavbarItems from "./__items/NavbarItemsView";
 import Cart from "../Cart/CartView";
 import City from "../City/CityView";
+import Language from "../Language/LanguageView";
 import NavbarContentWrapper from "./__content-wrapper/NavbarContentWrapperView";
 import Burger from "../Burger/BurgerView";
 import Logo from "../Logo/LogoView";
@@ -53,6 +54,7 @@ export default class NavbarView extends ComponentWithEvents {
   }
 
   render = () => {
+    const translation = this.parent.translation;
     return (
       <header className="pt-45 pb-45">
         <div
@@ -66,7 +68,7 @@ export default class NavbarView extends ComponentWithEvents {
             <div className="navbar__content pt-10 pb-10">
               <Logo to="/" src="assets/img/logo-phone.png" alt="logo" />
               <NavbarItem to="#" className="link navbar__link link_bold">
-                Личный кабинет
+                {translation["ACCOUNT"]}
                 <i className="fa fa-sign-in-alt ml-5" aria-hidden="true"></i>
               </NavbarItem>
             </div>
@@ -162,9 +164,7 @@ export default class NavbarView extends ComponentWithEvents {
               />
               <ul className="navbar__items navbar__items_bounded navbar__items_align-left ml-lg-30 ml-10">
                 <li className="navbar__item navbar__item_without-margin hide-mdlg">
-                  <button className="language-picker">
-                    <img src="assets/img/ru.svg" alt="" />
-                  </button>
+                  <Language parent={this.parent} />
                 </li>
                 <li className="navbar__item ml-lg-15 ml-5 ">
                   <City
@@ -184,7 +184,7 @@ export default class NavbarView extends ComponentWithEvents {
                   className="hide-mdlg ml-0 ml-xxl-10"
                   linkClassName="link_bold"
                 >
-                  Личный кабинет
+                  {translation["ACCOUNT"]}
                   <i className="fa fa-sign-in-alt ml-5" aria-hidden="true"></i>
                 </NavbarItem>
               </ul>
@@ -201,13 +201,13 @@ export default class NavbarView extends ComponentWithEvents {
                 />
               </div>
               <Link to="/" className="button hide-xl">
-                Икринки
+                {translation["CAVIAR"]}
                 <span className="button__icon">
                   <img src="assets/img/egg.svg" alt="" />
                 </span>
                 <div className="tooltip button__tooltip">
                   <div className="tooltip__content">
-                    Это кэшбек от СушиВесла, которым можно оплачивать заказы
+                    {translation["CAVIAR_TOOLTIP"]}
                   </div>
                 </div>
               </Link>

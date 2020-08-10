@@ -21,6 +21,14 @@ export default class AppPresenter extends BasicClassWithEvents {
       model.cartCount -= 1;
       view.exec("cartUpdated", this.cart);
     });
+
+    this.on("languageSwitched", (lang) => {
+      model.currentLanguage = lang;
+    });
+  }
+
+  get translation() {
+    return this._model.translation;
   }
 
   get catalog() {

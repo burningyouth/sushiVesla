@@ -1,5 +1,6 @@
 {
-  "defaultCity": "Абрамцево",
+  "defaultCity": "Волжский",
   "defaultCartTotal": 0,
-  "defaultCartCount": 0
+  "defaultCartCount": 0,
+  "defaultLanguage": "RU"
 }

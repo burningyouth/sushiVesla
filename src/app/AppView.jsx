@@ -20,6 +20,7 @@ export default class AppView extends ComponentWithEvents {
     this._presenter = new AppPresenter(this, new AppModel());
 
     this.defaultCity = this._presenter.info.defaultCity;
+    this.defaultLanguage = this._presenter.info.defaultLanguage;
     this.defaultCart = this._presenter.info.defaultCity;
     this.cities = this._presenter.cities;
 
@@ -34,6 +35,14 @@ export default class AppView extends ComponentWithEvents {
         />
       );
     });
+
+    this.state = {
+      language: this.defaultLanguage,
+    };
+  }
+
+  get translation() {
+    return this._presenter.translation;
   }
 
   showModal = (modalKey) => {
@@ -48,12 +57,27 @@ export default class AppView extends ComponentWithEvents {
     this.elements.city.updateCity(city);
   };
 
+  switchLanguage = (lang) => {
+    this._presenter.exec("languageSwitched", lang);
+    this.setState({
+      language: lang,
+    });
+  };
+
   componentDidMount() {
     this.on("cartUpdated", this.updateCart);
     this.on("citySelected", this.updateCity);
+    this.on("languageSwitched", this.switchLanguage);
 
     this.updateCity(this.defaultCity);
     this.updateCart(this.defaultCart);
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    if (this.state.language !== nextState.language) {
+      return true;
+    }
+    return false;
   }
 
   render = () => {
@@ -66,7 +90,11 @@ export default class AppView extends ComponentWithEvents {
           render={(routeProps) => <Navbar {...routeProps} parent={this} />}
         />
         <Switch>
-          <Route path="/" component={Home} exact></Route>
+          <Route
+            path="/"
+            render={(routeProps) => <Home {...routeProps} parent={this} />}
+            exact
+          ></Route>
           <Route
             path="/catalog"
             render={(routeProps) => <Catalog {...routeProps} parent={this} />}

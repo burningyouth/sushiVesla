@@ -1,7 +1,8 @@
 import React from "react";
-import TilesCategory from "./TilesCategoryView";
+import TilesCategory from "./__category/TilesCategoryView";
 
-export default function() {
+export default function(props) {
+  const translation = props.parent.translation;
   return (
     <div className="container container_fluid">
       <section className="tiles">
@@ -15,7 +16,7 @@ export default function() {
               desktop: "assets/img/sets_desktop.png",
             }}
           >
-            <span className="tiles__category-title">Сеты</span>
+            <span className="tiles__category-title">{translation["SETS"]}</span>
           </TilesCategory>
         </div>
         <div className="tiles__category-container tiles__category-container_red pt-20 pb-20">
@@ -28,7 +29,9 @@ export default function() {
               desktop: "assets/img/rolls_desktop.png",
             }}
           >
-            <span className="tiles__category-title">Роллы</span>
+            <span className="tiles__category-title">
+              {translation["ROLLS"]}
+            </span>
           </TilesCategory>
           <TilesCategory
             category="sushi"
@@ -40,7 +43,9 @@ export default function() {
             }}
             reversed
           >
-            <span className="tiles__category-title">Суши</span>
+            <span className="tiles__category-title">
+              {translation["SUSHI"]}
+            </span>
           </TilesCategory>
           <TilesCategory
             category="fried-rolls"
@@ -51,7 +56,9 @@ export default function() {
               desktop: "assets/img/fried_rolls_desktop.png",
             }}
           >
-            <span className="tiles__category-title">Жареные роллы</span>
+            <span className="tiles__category-title">
+              {translation["FRIED_ROLLS"]}
+            </span>
           </TilesCategory>
           <TilesCategory
             category="baked-rolls"
@@ -63,7 +70,9 @@ export default function() {
             }}
             reversed
           >
-            <span className="tiles__category-title">Запеченые роллы</span>
+            <span className="tiles__category-title">
+              {translation["BAKED_ROLLS"]}
+            </span>
           </TilesCategory>
         </div>
         <div className="tiles__category-container">
@@ -85,7 +94,9 @@ export default function() {
               тор
               <span className="tiles__category-sub-title">Собери свой</span>
             </span>
-            <span className="tiles__category-title show-md">Воки</span>
+            <span className="tiles__category-title show-md">
+              {translation["WOKS"]}
+            </span>
           </TilesCategory>
         </div>
         <div className="tiles__category-set">
@@ -100,7 +111,9 @@ export default function() {
               }}
             >
               {" "}
-              <span className="tiles__category-title">Супы</span>
+              <span className="tiles__category-title">
+                {translation["SOUPS"]}
+              </span>
             </TilesCategory>
           </div>
           <div className="tiles__category-container tiles__category-container_green">
@@ -113,7 +126,9 @@ export default function() {
                 desktop: "assets/img/tempura_desktop.png",
               }}
             >
-              <span className="tiles__category-title">Темпура</span>
+              <span className="tiles__category-title">
+                {translation["TEMPURA"]}
+              </span>
             </TilesCategory>
             <TilesCategory
               category="drinks"
@@ -125,7 +140,9 @@ export default function() {
               }}
               reversed
             >
-              <span className="tiles__category-title">Напитки</span>
+              <span className="tiles__category-title">
+                {translation["BEVERAGES"]}
+              </span>
             </TilesCategory>
           </div>
         </div>

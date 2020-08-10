@@ -1,10 +1,10 @@
 import React from "react";
 import Tiles from "../components/Tiles/TilesView";
 
-export default function() {
+export default function(props) {
   return (
     <section className="mb-40">
-      <Tiles />
+      <Tiles parent={props.parent} />
     </section>
   );
 }
