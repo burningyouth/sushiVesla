@@ -1,7 +1,7 @@
 import React from "react";
 import NavbarItem from "./__item/NavbarItemView";
 import NavbarItems from "./__items/NavbarItemsView";
-import NavbarCart from "./__cart/NavbarCartView";
+import Cart from "../Cart/CartView";
 import City from "../City/CityView";
 import NavbarContentWrapper from "./__content-wrapper/NavbarContentWrapperView";
 import Burger from "../Burger/BurgerView";
@@ -13,6 +13,8 @@ export default class NavbarView extends ComponentWithEvents {
   constructor(props) {
     super(props);
     this.parent.elements.navbar = this;
+    this._presenter = this.parent._presenter;
+
     this.collapsedClass = "navbar_collapsed";
     this.state = {
       menuCollapsed: false,
@@ -21,214 +23,16 @@ export default class NavbarView extends ComponentWithEvents {
     this.ref = React.createRef();
     this.cartRef = React.createRef();
     this.cityRef = React.createRef();
-    this.menuInfo = [
-      {
-        id: 0,
-        title: "Выбрать город",
-        link: "/sets",
-        imageSrc: "assets/img/sets.svg",
-      },
-      {
-        id: 1,
-        title: "О компании",
-        link: "/about",
-        imageSrc: "assets/img/sets.svg",
-      },
-      {
-        id: 2,
-        title: "Условия доставки",
-        link: "/delivery",
-        imageSrc: "assets/img/rolls.svg",
-      },
-      {
-        id: 3,
-        title: "Акции",
-        link: "/agreement",
-        imageSrc: "assets/img/rolls.svg",
-      },
-      {
-        id: 4,
-        title: "О компании",
-        link: "/about",
-        imageSrc: "assets/img/sets.svg",
-      },
-      {
-        id: 5,
-        title: "Условия доставки",
-        link: "/delivery",
-        imageSrc: "assets/img/rolls.svg",
-      },
-      {
-        id: 6,
-        title: "Акции",
-        link: "/agreement",
-        imageSrc: "assets/img/rolls.svg",
-      },
-      {
-        id: 7,
-        title: "О компании",
-        link: "/about",
-        imageSrc: "assets/img/sets.svg",
-      },
-      {
-        id: 8,
-        title: "Условия доставки",
-        link: "/delivery",
-        imageSrc: "assets/img/rolls.svg",
-      },
-      {
-        id: 9,
-        title: "Акции",
-        link: "/agreement",
-        imageSrc: "assets/img/rolls.svg",
-      },
-    ];
-    this.menuCategories = [
-      {
-        id: 0,
-        title: "Сеты",
-        link: "/sets",
-        imageSrc: "assets/img/sets.svg",
-      },
-      {
-        id: 1,
-        title: "Воки",
-        link: "/woks",
-        imageSrc: "assets/img/sets.svg",
-      },
-      {
-        id: 2,
-        title: "Роллы",
-        link: "/catalog",
-        imageSrc: "assets/img/rolls.svg",
-      },
-      {
-        id: 3,
-        title: "Гриль роллы",
-        link: "/grill-rolls",
-        imageSrc: "assets/img/sets.svg",
-      },
-      {
-        id: 4,
-        title: "Темпура",
-        link: "/tempura",
-        imageSrc: "assets/img/rolls.svg",
-      },
-      {
-        id: 5,
-        title: "Premium меню",
-        link: "/premium",
-        imageSrc: "assets/img/sets.svg",
-      },
-      {
-        id: 6,
-        title: "Суши",
-        link: "/sushi",
-        imageSrc: "assets/img/sets.svg",
-      },
-      {
-        id: 7,
-        title: "Супы",
-        link: "/more",
-        imageSrc: "assets/img/sets.svg",
-      },
-      {
-        id: 8,
-        title: "Напитки",
-        link: "/premium",
-        imageSrc: "assets/img/rolls.svg",
-      },
-      {
-        id: 9,
-        title: "Салаты",
-        link: "/sushi",
-        imageSrc: "assets/img/rolls.svg",
-      },
-      {
-        id: 10,
-        title: "Соусы",
-        link: "/more",
-        imageSrc: "assets/img/sets.svg",
-      },
-      {
-        id: 11,
-        title: "Разное",
-        link: "/sushi",
-        imageSrc: "assets/img/sets.svg",
-      },
-      {
-        id: 12,
-        title: "Соусы",
-        link: "/more",
-        imageSrc: "assets/img/sets.svg",
-      },
-    ];
-    this.menuCategoriesDesktop = [
-      {
-        id: 0,
-        title: "Сеты",
-        link: "/sets",
-      },
-      {
-        id: 1,
-        title: "Воки",
-        link: "/woks",
-      },
-      {
-        id: 2,
-        title: "Роллы",
-        link: "/catalog",
-      },
-      {
-        id: 3,
-        title: "Гриль роллы",
-        link: "/grill-rolls",
-      },
-      {
-        id: 4,
-        title: "Темпура",
-        link: "/tempura",
-      },
-      {
-        id: 5,
-        title: "Premium меню",
-        link: "/premium",
-      },
-      {
-        id: 6,
-        title: "Суши",
-        link: "/sushi",
-      },
-      {
-        id: 7,
-        title: "Еще",
-        link: "/more",
-      },
-    ];
+    this.menuInfo = this._presenter.menuInfo;
+    this.menuCategories = this._presenter.menuCategories;
     this.menuDesktop = {
       "/": {
         classModifier: "navbar__items_bounded",
-        items: [
-          {
-            id: 0,
-            title: "О компании",
-            link: "/about",
-          },
-          {
-            id: 1,
-            title: "Условия доставки",
-            link: "/delivery",
-          },
-          {
-            id: 2,
-            title: "Пользовательское соглашение",
-            link: "/agreement",
-          },
-        ],
+        items: this._presenter.menuIndex,
       },
       "*": {
         classModifier: "",
-        items: this.menuCategoriesDesktop,
+        items: this._presenter.menuCategories.slice(0, 8),
       },
     };
   }
@@ -238,10 +42,6 @@ export default class NavbarView extends ComponentWithEvents {
       this.setState({
         menuCollapsed: false,
       });
-  };
-
-  showModal = (modalKey) => {
-    this.parent.elements[modalKey].showModal();
   };
 
   componentDidMount() {
@@ -265,11 +65,7 @@ export default class NavbarView extends ComponentWithEvents {
           <NavbarContentWrapper modifier="mobile" type="mobile">
             <div className="navbar__content pt-10 pb-10">
               <Logo to="/" src="assets/img/logo-phone.png" alt="logo" />
-              <NavbarItem
-                parent={this}
-                to="#"
-                className="link navbar__link link_bold"
-              >
+              <NavbarItem to="#" className="link navbar__link link_bold">
                 Личный кабинет
                 <i className="fa fa-sign-in-alt ml-5" aria-hidden="true"></i>
               </NavbarItem>
@@ -281,6 +77,7 @@ export default class NavbarView extends ComponentWithEvents {
                   navbarItemsClass={this.navbarItemsClass}
                   menuItems={this.menuCategories.slice(0, 6)}
                   parent={this}
+                  showImage
                 />
               </div>
               <div className="navbar__content">
@@ -289,6 +86,7 @@ export default class NavbarView extends ComponentWithEvents {
                   navbarItemsClass={this.navbarItemsClass}
                   menuItems={this.menuCategories.slice(7)}
                   parent={this}
+                  showImage
                 />
               </div>
             </div>
@@ -298,6 +96,7 @@ export default class NavbarView extends ComponentWithEvents {
                 navbarItemsClass={this.navbarItemsClass}
                 menuItems={this.menuInfo}
                 parent={this}
+                showImage
               />
             </div>
             <div className="navbar__content">
@@ -361,37 +160,33 @@ export default class NavbarView extends ComponentWithEvents {
                 src="assets/img/logo-phone.png"
                 alt="logo"
               />
-              <ul className="navbar__items navbar__items_bounded navbar__items_align-left hide-mdlg ml-lg-30 ml-10">
+              <ul className="navbar__items navbar__items_bounded navbar__items_align-left ml-lg-30 ml-10">
                 <li className="navbar__item navbar__item_without-margin hide-mdlg">
                   <button className="language-picker">
                     <img src="assets/img/ru.svg" alt="" />
                   </button>
                 </li>
-                <li className="navbar__item ml-lg-15 ml-10 ">
+                <li className="navbar__item ml-lg-15 ml-5 ">
                   <City
                     ref={this.cityRef}
                     defaultCity="Волжский"
-                    parent={this}
+                    parent={this.parent}
                   ></City>
                 </li>
-                <li className="navbar__item ml-15">
-                  <a href="tel:88005503030" className="link navbar__link">
+                <li className="navbar__item hide-mdlg ml-15">
+                  <a href="tel:88005503030" className="link navbar__link ">
                     8-800-550-30-30
                   </a>
                 </li>
-                <li className="navbar__item ml-0 ml-xxl-10">
-                  <NavbarItem
-                    parent={this}
-                    to="#"
-                    className="link navbar__link link_bold"
-                  >
-                    Личный кабинет
-                    <i
-                      className="fa fa-sign-in-alt ml-5"
-                      aria-hidden="true"
-                    ></i>
-                  </NavbarItem>
-                </li>
+                <NavbarItem
+                  parent={this}
+                  to="#"
+                  className="hide-mdlg ml-0 ml-xxl-10"
+                  linkClassName="link_bold"
+                >
+                  Личный кабинет
+                  <i className="fa fa-sign-in-alt ml-5" aria-hidden="true"></i>
+                </NavbarItem>
               </ul>
             </div>
             <div className="navbar__content navbar__content_right">
@@ -416,7 +211,7 @@ export default class NavbarView extends ComponentWithEvents {
                   </div>
                 </div>
               </Link>
-              <NavbarCart parent={this} to="#" info="" ref={this.cartRef} />
+              <Cart parent={this.parent} to="#" info="" ref={this.cartRef} />
             </div>
           </NavbarContentWrapper>
         </div>

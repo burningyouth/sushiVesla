@@ -1,15 +1,13 @@
 import React from "react";
 import CatalogItem from "./__item/CatalogItemView";
-import CatalogPresenter from "./CatalogPresenter";
-import CatalogModel from "./CatalogModel";
 import ComponentWithEvents from "../../eventComponents/ComponentWithEvents";
 
 export default class CatalogView extends ComponentWithEvents {
   constructor(props) {
     super(props);
     this.parent = props.parent;
-    this._presenter = new CatalogPresenter(this, new CatalogModel());
-    this.itemElements = this._presenter.items.map((item) => {
+    this._presenter = this.parent._presenter;
+    this.itemElements = this._presenter.catalog.map((item) => {
       return (
         <CatalogItem
           parent={this}

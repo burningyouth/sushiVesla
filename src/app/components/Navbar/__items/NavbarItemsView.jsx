@@ -5,7 +5,7 @@ import ComponentWithEvents from "../../../eventComponents/ComponentWithEvents";
 export default class NavbarItemsView extends ComponentWithEvents {
   constructor(props) {
     super(props);
-    if (props.checkPath) {
+    if (props.checkPath && props.location) {
       this.menuItems = props.menuItems;
       this.checkPath = props.checkPath;
       this.updateMenuItems(props.location.pathname);
@@ -40,21 +40,18 @@ export default class NavbarItemsView extends ComponentWithEvents {
   }
 
   render() {
-    const { location, modifier } = this.props;
-    const elements = this.items.map((item, index) => {
-      const className = !index ? " navbar__item_without-margin" : "";
+    const { location, modifier, showImage } = this.props;
+    const elements = this.items.map((item) => {
       return (
-        <li key={item.id} className={`navbar__item${className}`}>
-          <NavbarItem
-            to={item.link}
-            className="link navbar__link"
-            active={location.pathname === item.link}
-            imageSrc={item.imageSrc}
-            parent={this.parent}
-          >
-            {item.title}
-          </NavbarItem>
-        </li>
+        <NavbarItem
+          key={item.id}
+          to={item.link}
+          active={location.pathname === item.link}
+          imageSrc={showImage && item.imageSrc}
+          parent={this.parent}
+        >
+          {item.title}
+        </NavbarItem>
       );
     });
     return (

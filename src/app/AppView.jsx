@@ -7,38 +7,60 @@ import Home from "./pageViews/HomePageView";
 import Catalog from "./pageViews/CatalogPageView";
 import Modal from "../app/components/Modal/ModalView";
 import ModalCity from "../app/components/Modal/__city/ModalCityView";
-
 import ComponentWithEvents from "./eventComponents/ComponentWithEvents";
+
+import AppModel from "./AppModel";
+import AppPresenter from "./AppPresenter";
 
 export default class AppView extends ComponentWithEvents {
   constructor(props) {
     super(props);
     this.elements = {};
+
+    this._presenter = new AppPresenter(this, new AppModel());
+
+    this.defaultCity = this._presenter.info.defaultCity;
+    this.defaultCart = this._presenter.info.defaultCity;
+    this.cities = this._presenter.cities;
+
+    this.citiesElements = this.cities.map((obj) => {
+      const active = this.defaultCity == obj.city ? true : false;
+      return (
+        <ModalCity
+          key={obj.city}
+          city={obj.city}
+          parent={this}
+          active={active}
+        />
+      );
+    });
   }
 
+  showModal = (modalKey) => {
+    this.elements[modalKey].showModal();
+  };
+
   updateCart = (obj) => {
-    this.elements.navbar.cartRef.current.updateCart(obj);
+    this.elements.cart.updateCart(obj);
   };
 
   updateCity = (city) => {
-    this.elements.navbar.cityRef.current.updateCity(city);
+    this.elements.city.updateCity(city);
   };
 
   componentDidMount() {
     this.on("cartUpdated", this.updateCart);
     this.on("citySelected", this.updateCity);
+
+    this.updateCity(this.defaultCity);
+    this.updateCart(this.defaultCart);
   }
 
   render = () => {
     return (
       <Router>
         <Modal title="Выберите город" parent={this} type="city">
-          <ul className="modal__content-cities">
-            <ModalCity city="Анапа" parent={this} />
-            <ModalCity city="Волгоград" parent={this} />
-            <ModalCity city="Волжский" parent={this} active />
-            <ModalCity city="Тест" parent={this} />
-          </ul>
+          <ul className="modal__content-cities">{this.citiesElements}</ul>
         </Modal>
         <Route
           render={(routeProps) => <Navbar {...routeProps} parent={this} />}
@@ -50,7 +72,9 @@ export default class AppView extends ComponentWithEvents {
             render={(routeProps) => <Catalog {...routeProps} parent={this} />}
           ></Route>
         </Switch>
-        <Route component={Footer} />
+        <Route
+          render={(routeProps) => <Footer {...routeProps} parent={this} />}
+        />
       </Router>
     );
   };

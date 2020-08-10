@@ -1,0 +1,161 @@
+{
+  "menuInfo": [
+    {
+      "id": 0,
+      "title": "Выбрать город",
+      "link": "/sets",
+      "imageSrc": "assets/img/sets.svg"
+    },
+    {
+      "id": 1,
+      "title": "О компании",
+      "link": "/about",
+      "imageSrc": "assets/img/sets.svg"
+    },
+    {
+      "id": 2,
+      "title": "Условия доставки",
+      "link": "/delivery",
+      "imageSrc": "assets/img/rolls.svg"
+    },
+    {
+      "id": 3,
+      "title": "Акции",
+      "link": "/agreement",
+      "imageSrc": "assets/img/rolls.svg"
+    },
+    {
+      "id": 4,
+      "title": "О компании",
+      "link": "/about",
+      "imageSrc": "assets/img/sets.svg"
+    },
+    {
+      "id": 5,
+      "title": "Условия доставки",
+      "link": "/delivery",
+      "imageSrc": "assets/img/rolls.svg"
+    },
+    {
+      "id": 6,
+      "title": "Акции",
+      "link": "/agreement",
+      "imageSrc": "assets/img/rolls.svg"
+    },
+    {
+      "id": 7,
+      "title": "О компании",
+      "link": "/about",
+      "imageSrc": "assets/img/sets.svg"
+    },
+    {
+      "id": 8,
+      "title": "Условия доставки",
+      "link": "/delivery",
+      "imageSrc": "assets/img/rolls.svg"
+    },
+    {
+      "id": 9,
+      "title": "Акции",
+      "link": "/agreement",
+      "imageSrc": "assets/img/rolls.svg"
+    }
+  ],
+  "menuCategories": [
+    {
+      "id": 0,
+      "title": "Сеты",
+      "link": "/sets",
+      "imageSrc": "assets/img/sets.svg"
+    },
+    {
+      "id": 1,
+      "title": "Воки",
+      "link": "/woks",
+      "imageSrc": "assets/img/sets.svg"
+    },
+    {
+      "id": 2,
+      "title": "Роллы",
+      "link": "/catalog",
+      "imageSrc": "assets/img/rolls.svg"
+    },
+    {
+      "id": 3,
+      "title": "Гриль роллы",
+      "link": "/grill-rolls",
+      "imageSrc": "assets/img/sets.svg"
+    },
+    {
+      "id": 4,
+      "title": "Темпура",
+      "link": "/tempura",
+      "imageSrc": "assets/img/rolls.svg"
+    },
+    {
+      "id": 5,
+      "title": "Premium меню",
+      "link": "/premium",
+      "imageSrc": "assets/img/sets.svg"
+    },
+    {
+      "id": 6,
+      "title": "Суши",
+      "link": "/sushi",
+      "imageSrc": "assets/img/sets.svg"
+    },
+    {
+      "id": 7,
+      "title": "Супы",
+      "link": "/more",
+      "imageSrc": "assets/img/sets.svg"
+    },
+    {
+      "id": 8,
+      "title": "Напитки",
+      "link": "/premium",
+      "imageSrc": "assets/img/rolls.svg"
+    },
+    {
+      "id": 9,
+      "title": "Салаты",
+      "link": "/sushi",
+      "imageSrc": "assets/img/rolls.svg"
+    },
+    {
+      "id": 10,
+      "title": "Соусы",
+      "link": "/more",
+      "imageSrc": "assets/img/sets.svg"
+    },
+    {
+      "id": 11,
+      "title": "Разное",
+      "link": "/sushi",
+      "imageSrc": "assets/img/sets.svg"
+    },
+    {
+      "id": 12,
+      "title": "Соусы",
+      "link": "/more",
+      "imageSrc": "assets/img/sets.svg"
+    }
+  ],
+  "menuIndex": [
+    {
+      "id": 0,
+      "title": "О компании",
+      "link": "/about"
+    },
+    {
+      "id": 1,
+      "title": "Условия доставки",
+      "link": "/delivery"
+    },
+    {
+      "id": 2,
+      "title": "Пользовательское соглашение",
+      "link": "/agreement"
+    }
+  ]
+}

@@ -1,10 +1,13 @@
 import React from "react";
-import NavbarItem from "../__item/NavbarItemView";
-import ComponentWithEvents from "../../../eventComponents/ComponentWithEvents";
+import { Link } from "react-router-dom";
+import ComponentWithEvents from "../../eventComponents/ComponentWithEvents";
 
-export default class NavbarCartView extends ComponentWithEvents {
+export default class CartView extends ComponentWithEvents {
   constructor(props) {
     super(props);
+
+    this.parent.elements.cart = this;
+
     this.info = props.info;
     this.infoRef = React.createRef();
   }
@@ -20,12 +23,12 @@ export default class NavbarCartView extends ComponentWithEvents {
 
   render() {
     return (
-      <NavbarItem to={this.props.to} className="navbar__cart">
-        <div className="navbar__cart-info" ref={this.infoRef}>
+      <Link to={this.props.to} className="cart">
+        <div className="cart__info" ref={this.infoRef}>
           {this.info}
         </div>
         <i className="fa fa-shopping-cart" aria-hidden="true"></i>
-      </NavbarItem>
+      </Link>
     );
   }
 }

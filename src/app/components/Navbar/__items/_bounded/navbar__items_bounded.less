@@ -1,13 +1,14 @@
 @import "../../../../less/variables.less";
 
 .navbar__items.navbar__items_bounded {
-  width: 240px;
+  max-width: 260px;
   flex-wrap: wrap;
 }
 
 @media (min-width: @xxl) {
   .navbar__items.navbar__items_bounded {
     width: auto;
+    max-width: none;
     flex-wrap: wrap;
   }
 }

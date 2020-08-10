@@ -3,6 +3,9 @@ import React, { Component } from "react";
 export default class CityView extends Component {
   constructor(props) {
     super(props);
+
+    props.parent.elements.city = this;
+
     this.ref = React.createRef();
   }
 

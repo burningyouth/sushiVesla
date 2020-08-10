@@ -6,7 +6,6 @@ export default class BasicClassWithEvents {
 
   on(eventType, handler) {
     const eventTypes = eventType.split(" ");
-    console.log("on");
     eventTypes.forEach((event) => {
       if (this._eventHandlers[event]) this._eventHandlers[event].push(handler);
       else {
@@ -24,7 +23,6 @@ export default class BasicClassWithEvents {
 
   exec(eventType, ...args) {
     const eventTypes = eventType.split(" ");
-    console.log("exec");
     eventTypes.forEach((event) => {
       if (this._eventHandlers[event])
         this._eventHandlers[event].forEach((handler) =>
@@ -34,9 +32,7 @@ export default class BasicClassWithEvents {
   }
 
   trigger(eventType, triggerOnThis = true, ...args) {
-    console.log("trigger");
     if (triggerOnThis) this.exec(eventType, ...args);
-    console.log(this.eventFireTo);
     if (this.eventFireTo && this.eventFireTo.trigger)
       this.eventFireTo.trigger(eventType, true, ...args);
   }
