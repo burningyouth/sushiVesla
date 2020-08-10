@@ -1,10 +1,10 @@
 import React from "react";
 import Catalog from "../components/Catalog/CatalogView";
 
-export default function() {
+export default function(props) {
   return (
     <section className="mb-40">
-      <Catalog />
+      <Catalog parent={props.parent} />
     </section>
   );
 }

@@ -1,12 +1,12 @@
 @import '../variables.less';
 
-.transition(@rest...){
-    transition-property: @rest;
-    transition-duration: 0.2s;
+.transition(@prop, @time: 0.2s){
+    transition-property: @prop;
+    transition-duration: @time;
     transition-timing-function: ease;
 }
 
-.transition-slow(@rest...){
+.transition-slow(@prop){
     transition-property: @rest;
     transition-duration: 0.75s;
     transition-timing-function: ease;

@@ -1,53 +1,41 @@
-import React, { Component } from "react";
-import CatalogItem from "./CatalogItemView";
+import React from "react";
+import CatalogItem from "./__item/CatalogItemView";
+import CatalogPresenter from "./CatalogPresenter";
+import CatalogModel from "./CatalogModel";
+import ComponentWithEvents from "../../eventComponents/ComponentWithEvents";
 
-export default class CatalogView extends Component {
-  items = [
-    {
-      id: 0,
-      imageSrc: "assets/img/savayaki.png",
-      title: "Саваяки",
-      description: `Курица копченая, мясо краба, соус спайси, лист салата, белый
-        соус, кунжут черный, рис, нори.`,
-      size: "200 г. / 8шт",
-      price: 150,
-    },
-    {
-      id: 1,
-      imageSrc: "assets/img/savayaki.png",
-      title: "Саваяки",
-      description: `Курица копченая, мясо краба, соус спайси, лист салата, белый
-        соус, кунжут черный, рис, нори.`,
-      size: "200 г. / 8шт",
-      price: 150,
-      modifier: "blue",
-    },
-    {
-      id: 2,
-      imageSrc: "assets/img/savayaki.png",
-      title: "Саваяки",
-      description: `Курица копченая, мясо краба, соус спайси, лист салата, белый
-        соус, кунжут черный, рис, нори.`,
-      size: "200 г. / 8шт",
-      price: 150,
-      showCounter: true,
-    },
-  ];
-  itemElements = this.items.map((item) => {
-    return <CatalogItem item={item} key={item.id} />;
-  });
-  render() {
+export default class CatalogView extends ComponentWithEvents {
+  constructor(props) {
+    super(props);
+    this.parent = props.parent;
+    this._presenter = new CatalogPresenter(this, new CatalogModel());
+    this.itemElements = this._presenter.items.map((item) => {
+      return (
+        <CatalogItem
+          parent={this}
+          item={item}
+          key={item.id}
+          callbackRemove={this.removeFromCart}
+          callbackAdd={this.addToCart}
+        />
+      );
+    });
+  }
+
+  componentDidMount() {
+    this.on("cartAdd", (itemPrice) => {
+      this._presenter.trigger("cartAdd", true, itemPrice);
+    });
+    this.on("cartRemove", (itemPrice) => {
+      this._presenter.trigger("cartRemove", true, itemPrice);
+    });
+  }
+
+  render = () => {
     return (
       <section className="container container_fluid pl-0 pr-0 pl-md-10 pr-md-10">
-        <div className="catalog">
-          {this.itemElements}
-          {this.itemElements}
-          {this.itemElements}
-          {this.itemElements}
-          {this.itemElements}
-          {this.itemElements}
-        </div>
+        <div className="catalog">{this.itemElements}</div>
       </section>
     );
-  }
+  };
 }

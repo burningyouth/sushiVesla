@@ -1,9 +1,22 @@
 .navbar {
   position: fixed;
   top: 0;
-  z-index: 9999;
+  z-index: 10;
 
   width: 100%;
 
   background: #ffffff;
+
+  &::before {
+    content: "";
+    position: fixed;
+    z-index: 10;
+
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(128, 128, 128, 0.274);
+  }
 }

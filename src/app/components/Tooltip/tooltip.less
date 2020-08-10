@@ -1,0 +1,35 @@
+@import "../../less/import.less";
+
+.tooltip {
+  position: absolute;
+  top: ~"calc(100% + 10px)";
+  display: inline-block;
+
+  width: 175%;
+  right: -37%;
+
+  background: @dark;
+  border: 1px solid @gray;
+  border-radius: 6px;
+  box-sizing: border-box;
+  color: white;
+  padding: 10px;
+
+  opacity: 1;
+
+  .transition(opacity);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -7px;
+    left: ~"calc(50% - 3.5px)";
+    display: block;
+    color: @dark;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 7px 7px 7px;
+    border-color: transparent transparent @dark transparent;
+  }
+}

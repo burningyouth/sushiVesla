@@ -1,0 +1,29 @@
+@import "../../../less/variables.less";
+
+.logo.logo_mobile {
+  width: 40px;
+  height: 40px;
+  margin-top: -10px;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (min-width: @mdlg+1) and (max-width: @lg) {
+  .logo.logo_mobile {
+    display: block;
+  }
+}
+
+@media (min-width: @lg + 1) {
+  .logo.logo_mobile {
+    display: none;
+  }
+}
+
+@media (max-width: @mdlg) {
+  .logo.logo_mobile {
+    display: none;
+  }
+}

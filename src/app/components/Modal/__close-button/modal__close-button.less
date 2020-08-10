@@ -1,0 +1,44 @@
+@import "../../../less/variables.less";
+
+.modal__close-button {
+  display: block;
+  position: absolute;
+  top: 22px;
+  right: 22px;
+
+  width: 22px;
+  height: 22px;
+
+  border-radius: 1px;
+  border: none;
+  background: none;
+  outline: none;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    display: block;
+    content: "";
+
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+
+    background-color: @lightgray;
+    transform: rotate(45deg);
+    transform-origin: center;
+  }
+
+  &::after {
+    position: relative;
+    bottom: 2px;
+    transform: rotate(-45deg);
+  }
+
+  &:hover {
+    &::before,
+    &::after {
+      background-color: @accent;
+    }
+  }
+}
