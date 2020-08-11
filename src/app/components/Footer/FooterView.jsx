@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import NavbarItem from "../Navbar/__item/NavbarItemView";
+import Language from "../Language/LanguageView";
 
 export default class FooterView extends Component {
   constructor(props) {

@@ -1,12 +1,6 @@
 {
   "menuInfo": [
     {
-      "id": 0,
-      "title": "Выбрать город",
-      "link": "/sets",
-      "imageSrc": "assets/img/sets.svg"
-    },
-    {
       "id": 1,
       "title": "О компании",
       "link": "/about",

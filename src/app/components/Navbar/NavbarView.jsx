@@ -67,10 +67,10 @@ export default class NavbarView extends ComponentWithEvents {
           <NavbarContentWrapper modifier="mobile" type="mobile">
             <div className="navbar__content pt-10 pb-10">
               <Logo to="/" src="assets/img/logo-phone.png" alt="logo" />
-              <NavbarItem to="#" className="link navbar__link link_bold">
+              <Link to="#" className="link navbar__link link_bold">
                 {translation["ACCOUNT"]}
                 <i className="fa fa-sign-in-alt ml-5" aria-hidden="true"></i>
-              </NavbarItem>
+              </Link>
             </div>
             <div className="navbar__content">
               <div className="navbar__content">
@@ -99,7 +99,20 @@ export default class NavbarView extends ComponentWithEvents {
                 menuItems={this.menuInfo}
                 parent={this}
                 showImage
-              />
+              >
+                <li className="navbar__item">
+                  <div
+                    onClick={() => this.parent.showModal("cityModal")}
+                    className="link navbar__link"
+                  >
+                    <img
+                      src="assets/img/sets.svg"
+                      className="navbar__item-image"
+                    />
+                    <span>Выбрать город</span>
+                  </div>
+                </li>
+              </NavbarItems>
             </div>
             <div className="navbar__content">
               <ul className="navbar__items navbar__items_socials">
@@ -163,7 +176,7 @@ export default class NavbarView extends ComponentWithEvents {
                 alt="logo"
               />
               <ul className="navbar__items navbar__items_bounded navbar__items_align-left ml-lg-30 ml-10">
-                <li className="navbar__item navbar__item_without-margin hide-mdlg">
+                <li className="navbar__item navbar__item_without-margin">
                   <Language parent={this.parent} />
                 </li>
                 <li className="navbar__item ml-lg-15 ml-5 ">

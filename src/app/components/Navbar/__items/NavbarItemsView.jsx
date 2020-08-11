@@ -60,6 +60,7 @@ export default class NavbarItemsView extends ComponentWithEvents {
           modifier ? ` navbar__items_${modifier}` : ""
         } ${this.navbarItemsClass ? this.navbarItemsClass : ""}`}
       >
+        {this.props.children}
         {elements}
       </ul>
     );

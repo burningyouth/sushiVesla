@@ -10,8 +10,7 @@ export default class CartView extends ComponentWithEvents {
 
     this.ruRef = React.createRef();
     this.enRef = React.createRef();
-    this.defaultLanguage = this.parent._presenter.info.defaultLanguage;
-    this.currentLang = this.defaultLanguage;
+    this.currentLang = this.parent.state.language;
   }
 
   updateImages = (lang = this.currentLang) => {
